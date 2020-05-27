@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: batch-integrator
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/integracao
+    username: root
+    password: 123456
+  batch:
+    initialize-schema: always
+    
+app:
+  logstash:
+    enabled: ${LOGSTASH_ENABLED:true}
+    host: ${LOGSTASH_HOST:localhost}
+    port: ${LOGSTASH_PORT:5000}
+    queue: ${LOGSTASH_QUEUE:8192}
+  file:
+    reader: ${FILE_READER:file/produto.csv}    
